@@ -38,10 +38,11 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onRegister, onClose
       valid = false;
     }
 
-    if (!leader.trim()) {
-      newErrors.leader = 'Líder da caravana é obrigatório';
-      valid = false;
-    }
+    // Líder da caravana não é mais obrigatório
+    // if (!leader.trim()) {
+    //   newErrors.leader = 'Líder da caravana é obrigatório';
+    //   valid = false;
+    // }
 
     setErrors(newErrors);
     return valid;
