@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 15;
+  --background-end-rgb: 18, 18, 24;
+  --brand-pink: #ff0099;
+  --brand-dark: #1a1a1a;
+  --text-shadow: 0 2px 10px rgba(255, 0, 153, 0.3);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      160deg,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.wheel-container {
+  max-width: 500px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 153, 0.2));
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.wheel-arrow {
+  color: var(--brand-pink);
+  filter: drop-shadow(0 0 8px rgba(255, 0, 153, 0.5));
+}
+
+/* Estilos para textos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--brand-pink) 0%, #ff66cc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: var(--text-shadow);
+}
+
+/* Estilos para o modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: rgb(26, 26, 32);
+  border: 1px solid rgba(255, 0, 153, 0.3);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 0 20px rgba(255, 0, 153, 0.2);
+}
+
+/* Estilos para botões */
+.btn-primary {
+  background-color: var(--brand-pink);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 153, 0.3);
+  position: relative;
+  z-index: 20;
+}
+
+.btn-primary:hover {
+  background-color: #e6008a;
+  box-shadow: 0 6px 20px rgba(255, 0, 153, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para o texto da roleta */
+.roulette-text {
+  font-weight: bold;
+  text-shadow: 0 0 2px black;
+}
+
+/* Estilos personalizados para a roleta */
+/* Sobrescrevendo estilos da biblioteca para melhorar a visualização dos textos */
+div[class^="sc-"] div {
+  word-break: break-word !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+}
+
+/* Limitando o tamanho do texto nos segmentos mais estreitos */
+div[class^="sc-"] div span {
+  max-width: 80px !important;
+  overflow: hidden !important;
+  vertical-align: middle !important;
+  white-space: normal !important;
+}
+
+/* Ajustes para o texto da roleta */
+[data-testid^="wheel-data-"] > div {
+  font-weight: bold !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.7) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  font-size: 12px !important;
+}
+
+/* Espaçamento para evitar sobreposição */
+.register-button-container {
+  margin-top: calc(2rem + 40px);
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+} 
